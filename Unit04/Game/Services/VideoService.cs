@@ -13,12 +13,12 @@ namespace Unit04.Game.Services
     /// </summary>
     public class VideoService
     {
-        private int _cellSize = 15;
-        private string _caption = "";
-        private int _width = 640;
-        private int _height = 480;
-        private int _frameRate = 0;
-        private bool _debug = false;
+        private int cellSize = 15;
+        private string caption = "";
+        private int width = 700;
+        private int height = 600;
+        private int frameRate = 0;
+        private bool debug = false;
 
         /// <summary>
         /// Constructs a new instance of KeyboardService using the given cell size.
@@ -27,12 +27,12 @@ namespace Unit04.Game.Services
         public VideoService(string caption, int width, int height, int cellSize, int frameRate, 
                 bool debug)
         {
-            this._caption = caption;
-            this._width = width;
-            this._height = height;
-            this._cellSize = cellSize;
-            this._frameRate = frameRate;
-            this._debug = debug;
+            this.caption = caption;
+            this.width = width;
+            this.height = height;
+            this.cellSize = cellSize;
+            this.frameRate = frameRate;
+            this.debug = debug;
         }
 
         /// <summary>
@@ -50,8 +50,8 @@ namespace Unit04.Game.Services
         public void ClearBuffer()
         {
             Raylib.BeginDrawing();
-            Raylib.ClearBackground(Raylib_cs.Color.BLACK);
-            if (_debug)
+            Raylib.ClearBackground(Raylib_cs.Color.BLUE);
+            if (debug)
             {
                 DrawGrid();
             }
@@ -99,7 +99,7 @@ namespace Unit04.Game.Services
         /// <returns>The cell size.</returns>
         public int GetCellSize()
         {
-            return _cellSize;
+            return cellSize;
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Unit04.Game.Services
         /// <returns>The height (in pixels).</returns>
         public int GetHeight()
         {
-            return _height;
+            return height;
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Unit04.Game.Services
         /// <returns>The width (in pixels).</returns>
         public int GetWidth()
         {
-            return _width;
+            return width;
         }
 
         /// <summary>
@@ -134,8 +134,8 @@ namespace Unit04.Game.Services
         /// </summary>
         public void OpenWindow()
         {
-            Raylib.InitWindow(_width, _height, _caption);
-            Raylib.SetTargetFPS(_frameRate);
+            Raylib.InitWindow(width, height, caption);
+            Raylib.SetTargetFPS(frameRate);
         }
 
         /// <summary>
@@ -143,13 +143,13 @@ namespace Unit04.Game.Services
         /// </summary>
         private void DrawGrid()
         {
-            for (int x = 0; x < _width; x += _cellSize)
+            for (int x = 0; x < width; x += cellSize)
             {
-                Raylib.DrawLine(x, 0, x, _height, Raylib_cs.Color.GRAY);
+                Raylib.DrawLine(x, 0, x, height, Raylib_cs.Color.GRAY);
             }
-            for (int y = 0; y < _height; y += _cellSize)
+            for (int y = 0; y < height; y += cellSize)
             {
-                Raylib.DrawLine(0, y, _width, y, Raylib_cs.Color.GRAY);
+                Raylib.DrawLine(0, y, width, y, Raylib_cs.Color.GRAY);
             }
         }
 

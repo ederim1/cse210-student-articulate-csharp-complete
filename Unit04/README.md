@@ -1,7 +1,6 @@
-# Robot Finds Kitten
-Simon Carless once described robotfindskitten as "less a game and more a way of 
-life ... It's fun to wander around until you find a kitten, at which point you feel 
-happy and can start again". I don't think I could have said it better myself!
+# Greed 
+The spaceship needs to get the Gems to achieve more points and avoid the Red characters to keep the score.
+The green characters add points and the red lower the points, you have to use the arrows in your keyboard to move the spaceship arround 
 
 ---
 ## Getting Started
@@ -23,6 +22,14 @@ The project files and folders are organized as follows:
 ```
 root                    (project root folder)
 +-- Game                (source code folder)
+    +--Casting          (contains all the folders with classes)
+        +--Actor        (the "spaceship")
+        +--Artifact     (the characters falling)
+        +--Cast         (keeps track of a collection of actors)
+        +--Color        (sets up the color in the game)
+        +--Point        (Tracking the position)    
+    +--Directing        (contains the director file)
+        +--Director     (The risponsable of Directing the game)
 +-- Program.cs          (program entry point)    
 +-- README.md           (general info)
 +-- Unit04.csproj       (dotnet project file)
@@ -35,3 +42,4 @@ root                    (project root folder)
 ## Authors
 * Matt Manley (manleym@byui.edu)
 * Scott Burton (burtons@byui.edu)
+* Eder Morales (ederim@byui.edu)
